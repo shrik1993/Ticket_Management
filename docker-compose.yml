@@ -1,0 +1,22 @@
+version: '2'
+
+services:
+  mysql:
+    image: mysql:latest
+    container_name: mysql
+    ports:
+      - 6033:3306
+    environment:
+      MYSQL_ROOT_PASSWORD: 'root123'
+      MYSQL_DATABASE: ticket_management
+      MYSQL_USER: 'admin'
+      MYSQL_PASS: 'admin123'
+    volumes:
+      - /opt/mysql_con/data:/var/lib/mysql
+  api:
+    build: ./Ticket_Management/
+    container_name: ticket_management
+    ports:
+      - 9090:9090
+    depends_on:
+      - mysql
