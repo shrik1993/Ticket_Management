@@ -23,5 +23,5 @@ COPY . /opt/flask_app
 
 #ENTRYPOINT ["python"]
 # Run Flask application using uwsgi server
-ENTRYPOINT ["bash", "dbmigrate.sh"]
+ENTRYPOINT ["bash", "dbmigrate.sh", "production"]
 #CMD ["uwsgi", "--ini", "uwsgi.ini"]
