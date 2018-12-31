@@ -43,6 +43,7 @@ class TicketsAPI(Resource):
         except:
             return {'results': "Internal Server Error"}, 500
 
+    @auth_token_required
     def get(self):
         """
         List out all available tickets. Anyone can view tickets.
@@ -65,6 +66,7 @@ class TicketAPI(Resource):
                                    location='json')
         super(TicketAPI, self).__init__()
 
+    @auth_token_required
     def get(self, tk_id):
         """
         List a particular ticket provided ticket ID is given.
