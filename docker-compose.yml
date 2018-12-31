@@ -18,5 +18,7 @@ services:
     container_name: ticket_management
     ports:
       - 9090:9090
+    environment:
+      env: 'production'
     depends_on:
       - mysql

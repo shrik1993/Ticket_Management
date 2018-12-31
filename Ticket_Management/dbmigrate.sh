@@ -1,10 +1,9 @@
 #!/bin/bash
 
-export env=$1
 python manage.py db init
 
 # Drop existing tables and recreate all tables from model
-if [ "$2" == "rewrite" ]; then
+if [ "$1" == "rewrite" ]; then
     python manage.py db downgrade && \
     python manage.py db stamp head
 fi
