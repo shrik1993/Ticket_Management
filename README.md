@@ -1,7 +1,7 @@
-Ticket Management REST API
+Ticket Management RESTful API
 =============
 
-This is a simple, small scale helpdesk/ticket management system written in Python-Flask. 
+This is a simple, small scale helpdesk/ticket management system RESTful API written in Python-Flask. 
 This project focus on implementation of RESTful APIs using Python-Flask.
 
 Following are the key points related to project:
@@ -78,7 +78,7 @@ curl -X PUT -H "Content-Type:application/json" -H "Authorization:WyIyIiwiJDUkcm9
 
 5. Get a particular ticket using ticket ID:
 ```
-curl -X GET -H "Content-Type:application/json" -H "Authorization:WyIyIiwiJDUkcm91bmRzPTUzNTAwMCRrR2NYRUxNMG5SWEo1emJVJEt0TUZKQ2FKMi9LTFVHUGFLZzJTbXZMdzd0by5UYWFBNTlLRElHN1VPQjYiXQ.XCmPrg.1XsgMVETYg7CkHPxIijxWgXphZ4" http://localhost:9090/api/tickets
+curl -X GET -H "Content-Type:application/json" -H "Authorization:WyIyIiwiJDUkcm91bmRzPTUzNTAwMCRrR2NYRUxNMG5SWEo1emJVJEt0TUZKQ2FKMi9LTFVHUGFLZzJTbXZMdzd0by5UYWFBNTlLRElHN1VPQjYiXQ.XCmPrg.1XsgMVETYg7CkHPxIijxWgXphZ4" http://localhost:9090/api/ticket/1
 {
     "results": [
         {
