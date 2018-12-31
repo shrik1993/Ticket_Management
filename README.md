@@ -18,7 +18,10 @@ and run application using UWSGi server.
 To add other users, a separate script (create_users.py) is provided to create database users.
 10. Unfortunately, due to the time constraints Swagger-UI is not implemented for this APIs.
 11. Post-Man can be used to send request and get response.
-9. Python 3.5 is default python interpreter for this project.
+12. Python 3.5 is default python interpreter for this project.
+13. Note that service runs on the port 9090. The API start point is `http://localhost:9090/api/login` 
+(Only applicable if accessed from host on which services are deployed otherwise provide 
+IP of host on which services are deployed) 
 
 Setup
 -----
