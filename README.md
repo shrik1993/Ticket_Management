@@ -1,29 +1,33 @@
 Ticket Management REST API
 =============
 
-Files for my helpdesk/ticket managment server written in Python-Flask. Here are the articles:
-Following are the key points related to project:
-1. This is just small scale ticket managment system using Flask-Restful.
-2. At the backend it uses MySQL database.
-3. MySQL and Flask application in dockerized and can be lunched using docker-compose.
-4. Token based authentication and Role based access filter is implemented in this project.
-5. There is seperate database initialization script to insert initial data into the database.
-6. Application is deployed using uwsgi server.
-7. To script `dbmigrate.sh` will perform database table migration from Flask ORM models 
-and run application using uwsgi server.
-8. Token is valid only for 1 hour.
+This is a simple, small scale helpdesk/ticket management system written in Python-Flask. 
+This project focus on implementation of RESTful APIs using Python-Flask.
 
+Following are the key points related to project:
+1. This is just small scale ticket management system using Flask-Restful.
+2. At the backend it uses MySQL database.
+3. MySQL and Flask application in dickered and can be lunched using docker-compose.
+4. Token based authentication and Role based access filter is implemented in this project.
+5. There is separate database initialization script to insert initial data into the database.
+6. Application is deployed using UWSGI server.
+7. To script `dbmigrate.sh` will perform database table migration from Flask ORM models 
+and run application using UWSGi server.
+8. Token is valid only for 1 hour.
+9. Automated deployment creates two users 'admin' and 'guest' with 'Admin' and 'Guest' role respectively. 
+To add other users, a separate script (create_users.py) is provided to create database users.
+10. Unfortunately, due to the time constraints Swagger-UI is not implemented for this APIs.
+11. Post-Man can be used to send request and get response.
+9. Python 3.5 is default python interpreter for this project.
 
 Setup
 -----
-
-- Install Python 3 and git.
+- Run `docker-compose up` to build and run MySQL-flask application containers.
 - You can modify environment variable `env` in docker-compose.yml file. This variable can be set to development, testing, production and stagging.
-- Run `docker-compose up` to build and run MySQL-flask application container.
 - As this API implements token based authentication you need to get the token from `/api/login` 
-- Execute following commands to get token and perfoem CRUD operation on tickets using REST APIs. 
+- Execute following commands to get token and perform CRUD operation on tickets using REST APIs. 
 
-NOTE: To get token you require username and password. Bydefault this application creates guest and admin user.
+NOTE: To get token you require username and password. By default this application creates guest and admin user.
 
 1. To get the access token:
 ```
@@ -93,6 +97,5 @@ curl -X DELETE -H "Content-Type:application/json" -H "Authorization:WyIyIiwiJDUk
     "results": "Successfully deleted ticket ID: 2"
 }
 ```
-
 
 Note: This is just small scale project for demo purpose.
