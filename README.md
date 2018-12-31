@@ -48,7 +48,7 @@ $ curl -X POST -H "Content-Type:application/" -H "Authorization:WyIyIiwiJDUkcm91
 
 3. Use token and access `/api/tickets` using `GET` method to get all tickets.
 ```
-curl -X GET -H "Content-Type:application/json" http://localhost:9090/api/tickets
+curl -X GET -H "Content-Type:application/json" -H "Authorization:WyIyIiwiJDUkcm91bmRzPTUzNTAwMCRrR2NYRUxNMG5SWEo1emJVJEt0TUZKQ2FKMi9LTFVHUGFLZzJTbXZMdzd0by5UYWFBNTlLRElHN1VPQjYiXQ.XCmPrg.1XsgMVETYg7CkHPxIijxWgXphZ4" http://localhost:9090/api/tickets
 {
     "results": [
         {
@@ -75,7 +75,7 @@ curl -X PUT -H "Content-Type:application/json" -H "Authorization:WyIyIiwiJDUkcm9
 
 5. Get a particular ticket using ticket ID:
 ```
-curl -X GET -H "Content-Type:application/json" http://localhost:9090/api/tickets
+curl -X GET -H "Content-Type:application/json" -H "Authorization:WyIyIiwiJDUkcm91bmRzPTUzNTAwMCRrR2NYRUxNMG5SWEo1emJVJEt0TUZKQ2FKMi9LTFVHUGFLZzJTbXZMdzd0by5UYWFBNTlLRElHN1VPQjYiXQ.XCmPrg.1XsgMVETYg7CkHPxIijxWgXphZ4" http://localhost:9090/api/tickets
 {
     "results": [
         {
