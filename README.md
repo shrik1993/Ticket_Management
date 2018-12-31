@@ -18,13 +18,12 @@ and run application using UWSGi server.
 To add other users, a separate script (create_users.py) is provided to create database users.
 10. Unfortunately, due to the time constraints Swagger-UI is not implemented for this APIs.
 11. Post-Man can be used to send request and get response.
+9. Python 3.5 is default python interpreter for this project.
 
 Setup
 -----
-
-- Install Python 3 and git.
+- Run `docker-compose up` to build and run MySQL-flask application containers.
 - You can modify environment variable `env` in docker-compose.yml file. This variable can be set to development, testing, production and stagging.
-- Run `docker-compose up` to build and run MySQL-flask application container.
 - As this API implements token based authentication you need to get the token from `/api/login` 
 - Execute following commands to get token and perform CRUD operation on tickets using REST APIs. 
 
@@ -98,6 +97,5 @@ curl -X DELETE -H "Content-Type:application/json" -H "Authorization:WyIyIiwiJDUk
     "results": "Successfully deleted ticket ID: 2"
 }
 ```
-
 
 Note: This is just small scale project for demo purpose.
