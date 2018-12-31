@@ -7,11 +7,11 @@ Following are the key points related to project:
 2. At the backend it uses MySQL database.
 3. MySQL and Flask application in dockerized and can be lunched using docker-compose.
 4. Token based authentication and Role based access filter is implemented in this project.
-
 5. There is seperate database initialization script to insert initial data into the database.
 6. Application is deployed using uwsgi server.
 7. To script `dbmigrate.sh` will perform database table migration from Flask ORM models 
 and run application using uwsgi server.
+8. Token is valid only for 1 hour.
 
 
 Setup
@@ -74,6 +74,7 @@ curl -X PUT -H "Content-Type:application/json" -H "Authorization:WyIyIiwiJDUkcm9
 
 5. Delete particular ticket using ticket ID:
 ```
+curl -X DELETE -H "Content-Type:application/json" -H "Authorization:WyIyIiwiJDUkcm91bmRzPTUzNTAwMCQ4ajlnN0FEZ0RTWS5Da25YJE9LelN1MmVBY2lqcnlOdC5hbzRkaGpCSE02aC5rTlpKaFdhZWpnZDJKMzAiXQ.XCmTUQ.sQl7EAiSlgBxJld4z5hvI6j-xI8"  http://localhost:5000/api/ticket/2
 {
     "results": "Successfully deleted ticket ID: 2"
 }
