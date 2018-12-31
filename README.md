@@ -18,10 +18,7 @@ Setup
 -----
 
 - Install Python 3 and git.
-- Export enviroment i.e. development, testing, production, etc.
-```bash
-export env=production
-```
+- You can modify environment variable `env` in docker-compose.yml file. This variable can be set to development, testing, production and stagging.
 - Run `docker-compose up` to build and run MySQL-flask application container.
 - As this API implements token based authentication you need to get the token from `/api/login` 
 - Execute following commands to get token and perfoem CRUD operation on tickets using REST APIs. 
