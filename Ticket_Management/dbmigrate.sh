@@ -1,5 +1,6 @@
 #!/bin/bash
 
+export env=$1
 python manage.py db init
 
 # Drop existing tables and recreate all tables from model

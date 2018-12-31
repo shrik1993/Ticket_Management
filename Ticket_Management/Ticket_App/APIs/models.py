@@ -50,7 +50,7 @@ class Role(db.Model, RoleMixin):
 class Ticket(db.Model):
     __tablename__ = 'tickets'
     id = db.Column(db.Integer(), primary_key=True, autoincrement=True)
-    title = db.Column(db.String(50), unique=True)
+    title = db.Column(db.String(50))
     description = db.Column(db.String(255))
     done = db.Column(db.Boolean(), default=False)
     assigned_to = db.Column(db.String(50))

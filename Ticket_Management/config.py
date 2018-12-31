@@ -15,6 +15,7 @@ class Config(object):
     SECURITY_UNAUTHORIZED_VIEW = None
     SECRET_KEY = os.urandom(25)
     SQLALCHEMY_DATABASE_URI = 'mysql+pymysql://root:root123@mysql:3306/ticket_management'
+    # SQLALCHEMY_DATABASE_URI = 'mysql+pymysql://root:root123@127.0.0.1:6033/ticket_management'
     SQLALCHEMY_TRACK_MODIFICATIONS = False
 
 class ProductionConfig(Config):
