@@ -61,7 +61,7 @@ curl -X GET -H "Content-Type:application/json" http://localhost:9090/api/tickets
 
 4. Modify particular ticket using ticket ID:
 ```
-curl -X PUT -H "Content-Type:application/json" -H "Authorization:WyIyIiwiJDUkcm91bmRzPTUzNTAwMCRrR2NYRUxNMG5SWEo1emJVJEt0TUZKQ2FKMi9LTFVHUGFLZzJTbXZMdzd0by5UYWFBNTlLRElHN1VPQjYiXQ.XCmPrg.1XsgMVETYg7CkHPxIijxWgXphZ4" -d '{"title":"ticket1","description":"Urgent requirement.", "done": "Done", "assigned_to":"foo1"}' http://localhost:5000/api/ticket/1
+curl -X PUT -H "Content-Type:application/json" -H "Authorization:WyIyIiwiJDUkcm91bmRzPTUzNTAwMCRrR2NYRUxNMG5SWEo1emJVJEt0TUZKQ2FKMi9LTFVHUGFLZzJTbXZMdzd0by5UYWFBNTlLRElHN1VPQjYiXQ.XCmPrg.1XsgMVETYg7CkHPxIijxWgXphZ4" -d '{"title":"ticket1","description":"Urgent requirement.", "done": "True", "assigned_to":"foo1"}' http://localhost:5000/api/ticket/1
 {
     "results": [
         "Updated Ticket ID: 2"
@@ -69,7 +69,25 @@ curl -X PUT -H "Content-Type:application/json" -H "Authorization:WyIyIiwiJDUkcm9
 }
 ``` 
 
-5. Delete particular ticket using ticket ID:
+5. Get a particular ticket using ticket ID:
+```
+curl -X GET -H "Content-Type:application/json" http://localhost:9090/api/tickets
+{
+    "results": [
+        {
+            "id": "1",
+            "title": "ticket1",
+            "done": "True",
+            "description": "Urgent requirement",
+            "assigned_to": "foo1"
+        },
+    ],
+    "count": 1
+}
+```
+```
+
+6. Delete particular ticket using ticket ID:
 ```
 curl -X DELETE -H "Content-Type:application/json" -H "Authorization:WyIyIiwiJDUkcm91bmRzPTUzNTAwMCQ4ajlnN0FEZ0RTWS5Da25YJE9LelN1MmVBY2lqcnlOdC5hbzRkaGpCSE02aC5rTlpKaFdhZWpnZDJKMzAiXQ.XCmTUQ.sQl7EAiSlgBxJld4z5hvI6j-xI8"  http://localhost:5000/api/ticket/2
 {
